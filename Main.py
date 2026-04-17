@@ -1,15 +1,11 @@
-# Indian-Real-Estate
-# what-if calculator for Indian Real Estate analyst  
 import streamlit as st
- 
-st.title("simple streamlit app")
-st.header("welcome")
-st.write("this is a simple streamlit app")
- 
-name=st.text_input("enter your name")
-if name:
-    st.success(f"hello, {name}!  \nHow are you?")
- 
-number= st.slider("pick your age", 0, 100)
-st.write(f"you age is {number}")
+import pandas as pd
+
+# 1️⃣ Load CSV file
+df = pd.read_csv("Chennai_RealEstate1.csv")
+
+# 2️⃣ ✅ HERE add this line
+df = df.dropna(how="all")
+
+# 3️⃣ Next steps: encoding, feature selection, etc.
  
